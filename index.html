@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>考研倒计时</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: #fff;
+      color: #333;
+      text-align: center;
+      padding: 40px;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .countdown {
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+    .progress-container {
+      width: 80%;
+      height: 24px;
+      background-color: #eee;
+      border-radius: 12px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background-color: #4CAF50;
+      text-align: center;
+      line-height: 24px;
+      color: white;
+      border-radius: 12px 0 0 12px;
+    }
+  </style>
+</head>
+<body>
+  <h1>距离 2024 考研结束还有</h1>
+  <div class="countdown" id="countdown">加载中...</div>
+
+  <div class="progress-container">
+    <div class="progress-bar" id="progress-bar">0%</div>
+  </div>
+
+  <script>
+    const startTime = new Date("2024-09-01T00:00:00");
+    const endTime = new Date("2024-12-23T00:00:00");
+
+    function updateCountdown() {
+      const now = new Date();
+      const totalDuration = endTime - startTime;
+      const timeLeft = endTime - now;
+      const timePassed = now - startTime;
+
+      if (timeLeft < 0) {
+        document.getElementById("countdown").innerText = "🎉 考研结束啦！";
+        document.getElementById("progress-bar").style.width = "100%";
+        document.getElementById("progress-bar").innerText = "100%";
+        return;
+      }
+
+      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((timeLeft / (1000 * 60)) % 60);
+
+      document.getElementById("countdown").innerText =
+        `${days} 天 ${hours} 小时 ${minutes} 分钟`;
+
+      const progress = Math.min((timePassed / totalDuration) * 100, 100).toFixed(1);
+      document.getElementById("progress-bar").style.width = `${progress}%`;
+      document.getElementById("progress-bar").innerText = `${progress}%`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 60 * 1000); // 每分钟更新一次
+  </script>
+</body>
+</html>
