@@ -30,3 +30,32 @@
 1. 进入仓库设置 → Pages
 2. Source 选择为 `main` 分支，文件夹选择 `/(root)`
 3. 保存后，你会得到一个链接类似：
+https://pxl212.github.io/notion/
+4. 在 Notion 输入 `/embed` 插入该链接即可使用
+
+---
+
+## 📅 示例画面
+
+![countdown preview](./preview.png)
+
+---
+
+> 如需修改起始时间和结束时间，可在 `index.html` 中修改如下部分：
+
+```js
+const startTime = new Date("2024-09-01T00:00:00");
+const endTime = new Date("2024-12-23T00:00:00");
+https://notion-countdown-pxl212.vercel.app
+
+---
+
+## ✅ 最终嵌入到 Notion
+
+在 Notion 中：
+
+1. 输入 `/embed`
+2. 粘贴刚刚部署好的链接
+3. 点击“创建嵌入内容”，即可显示你的倒计时 + 进度条页面
+
+---
