@@ -4,7 +4,7 @@
 
 ## 🚀 在线预览
 
-> 请部署后将链接粘贴在此，例如：https://your-name.vercel.app
+> 请部署后将链接粘贴在此，例如：[https://your-name.vercel.app](https://pxl212.github.io/notion/)
 
 ## ✅ 功能说明
 
