@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>考研倒计时</title>
+  <title>关关难过关关过</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
@@ -73,8 +73,8 @@
   </div>
 
   <script>
-    const startTime = new Date("2025-05-21T00:00:00");
-    const endTime = new Date("2025-12-20T00:00:00");
+    const startTime = new Date("2025-05-29T00:00:00");
+    const endTime = new Date("2025-12-03T00:00:00");
 
     function updateCountdown() {
       const now = new Date();
@@ -83,7 +83,7 @@
       const timePassed = now - startTime;
 
       if (timeLeft < 0) {
-        document.getElementById("countdown").innerText = "🎉 考研结束啦！";
+        document.getElementById("countdown").innerText = "🎉 哈哈，yeah~打怪升级！漱芳斋上工日子结束啦！";
         document.getElementById("progress-bar").style.width = "100%";
         document.getElementById("progress-bar").innerText = "100%";
         return;
